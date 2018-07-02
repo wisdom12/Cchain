@@ -34,6 +34,7 @@
     "@angular/animations": "6.0.0",
     "@angular/common": "6.0.0",
     "@angular/compiler": "4.0.0",
+    "@angular/compiler-cli": "6.0.0",
     "@angular/core": "6.0.0",
     "@angular/forms": "6.0.0",
     "@angular/http": "6.0.0",
@@ -84,7 +85,6 @@
   },
   "devDependencies": {
     "@angular/cli": "6.0.0",
-    "@angular/compiler-cli": "6.0.0",
     "@angular/language-service": "6.0.0",
     "@compodoc/compodoc": "1.0.1",
     "@types/d3-color": "1.0.5",
