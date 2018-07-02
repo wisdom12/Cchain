@@ -1,0 +1,28 @@
+<nb-card>
+    <nb-card-header>
+      In progress contract
+      </nb-card-header>
+  
+    <nb-card-body>
+        <table class="table">
+            <thead>
+                  <tr>
+                    <th>Recipient account </th>
+                    <th>Owner account</th>
+                    <th>Bank owner</th>
+                    <th>Check</th>
+                    <th>State</th>
+                      </tr>
+            </thead>
+            <tbody>
+                  <tr *ngFor="let contractInProg of allContractsinprogress | async">
+                    <td>{{contractInProg.compte_newowner}}</td>
+                    <td>{{contractInProg.compte_owner}}</td>
+                    <td>{{contractInProg.owner}}</td>
+                    <td>{{contractInProg.check}}</td>
+                    <td>{{contractInProg.validation}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </nb-card-body>
+  </nb-card>

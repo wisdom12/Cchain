@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-4">
+    <nb-card>
+      <nb-card-header>CONTRACT</nb-card-header>
+      <nb-card-body>
+        <div style="display: block">
+          <canvas baseChart [data]="doughnutChartData" [colors]="lineChartColorsCONTRACT" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
+            (chartHover)="chartHoveredCONTRACT($event)" (chartClick)="chartClickedCONTRACT($event)"></canvas>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-4">
+    <nb-card>
+      <nb-card-header>CHECK</nb-card-header>
+      <nb-card-body>
+        <div style="display: block">
+          <canvas baseChart [data]="doughnutChartDataCHECK" [labels]="doughnutChartLabelsCHECK" [chartType]="doughnutChartTypeCHECK"
+            (chartHover)="chartHoveredCHECK($event)" (chartClick)="chartClickedCHECK($event)"></canvas>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-4">
+    <nb-card>
+      <nb-card-header>BANK</nb-card-header>
+      <nb-card-body>
+        <div style="display: block">
+          <canvas baseChart [data]="pieChartDataBANK" [labels]="pieChartLabelsBANK" [chartType]="pieChartTypeBANK" (chartHover)="chartHoveredBANK($event)"
+            (chartClick)="chartClickedBANK($event)"></canvas>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <ngx-kitten></ngx-kitten>
+  </div>
+
+  <div class="col-6">
+    <ngx-team></ngx-team>
+  </div>
+</div>

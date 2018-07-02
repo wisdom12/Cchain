@@ -1,0 +1,86 @@
+<nb-card>
+    <nb-card-header>
+      Add Check
+      </nb-card-header>
+    <nb-card-body>
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm" *ngIf="AddCheck">
+            <div class="row">
+        <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="inputLastName">ID check</label>
+                        <input type="text" class="form-control" #titleInput="ngModel"  required name="Idcontrat" id="idIdcontract" [(ngModel)]="AddCheck.Idcheck"/>
+                      </div>
+                </div>
+        
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="inputEmail">Ammount</label>
+                        <input type="text" class="form-control" #titleInput="ngModel"  required name="compte_newowner" id="idcompte_newowner" [(ngModel)]="AddCheck.amount"/>
+                    </div>
+                </div>
+        
+              </div>
+
+              <div class="row">
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                          <label for="inputEmail">Bank owner</label>
+                              <input class="form-control" #titleInput="ngModel" required name="owner" id="idowner" [(ngModel)]="AddCheck.owner"/>
+                      </div>
+                  </div>
+      
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                          <label for="inputEmail">Compte owner</label>
+                              <input class="form-control" #titleInput="ngModel" required name="check1" id="idcheck" [(ngModel)]="AddCheck.compte_owner"/>
+                      </div>
+                  </div>
+                     
+              </div>
+
+              <div class="row">
+                  <div class="col-sm-5"></div>
+                  <div class="col-sm-1">
+
+            <button type="submit" [disabled]="!editForm.form.valid" class="btn btn-primary">
+                <span class="fa fa-save"></span>&nbsp;<span>Valider</span>
+                </button>
+              </div>
+        </div>
+        </form>
+</nb-card-body>
+</nb-card>
+
+
+<nb-card>
+  <nb-card-header>
+    list of check
+  </nb-card-header>
+
+  <nb-card-body>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID check </th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Bank reciver</th>
+          <th>Bank owner</th>
+          <th>Account owner</th>
+          <th>State</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let check of allcheck | async">
+          <td>{{check.Idcheck}}</td>
+          <td>{{check.amount}}</td>
+          <td>{{check.date}}</td>
+          <td>{{check.reciver}}</td>
+          <td>{{check.owner}}</td>
+          <td>{{check.compte_owner}}</td>
+          <td>{{check.statue}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </nb-card-body>
+</nb-card>
