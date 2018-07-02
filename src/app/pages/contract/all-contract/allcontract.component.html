@@ -1,0 +1,28 @@
+<nb-card>
+    <nb-card-header>
+      list of contract
+      </nb-card-header>
+  
+    <nb-card-body>
+        <table class="table">
+            <thead>
+                  <tr>
+                    <th>Recipient account </th>
+                    <th>Owner account</th>
+                    <th>Bank owner</th>
+                    <th>Check</th>
+                    <th>State</th>
+                      </tr>
+            </thead>
+            <tbody>
+                  <tr *ngFor="let contract of allContracts | async">
+                    <td>{{contract.compte_newowner}}</td>
+                    <td>{{contract.compte_owner}}</td>
+                    <td>{{contract.owner}}</td>
+                    <td>{{contract.check}}</td>
+                    <td>{{contract.validation}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </nb-card-body>
+  </nb-card>

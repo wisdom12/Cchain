@@ -1,0 +1,29 @@
+
+<nb-card>
+    <nb-card-header>
+      Valid contract
+      </nb-card-header>
+  
+    <nb-card-body>
+        <table class="table">
+            <thead>
+                  <tr>
+                    <th>Recipient account </th>
+                    <th>Owner account</th>
+                    <th>Bank owner</th>
+                    <th>Check</th>
+                    <th>State</th>
+                      </tr>
+            </thead>
+            <tbody>
+                  <tr *ngFor="let ValidContract of allCpntractValid | async">
+                    <td>{{ValidContract.compte_newowner}}</td>
+                    <td>{{ValidContract.compte_owner}}</td>
+                    <td>{{ValidContract.owner}}</td>
+                    <td>{{ValidContract.check}}</td>
+                    <td>{{ValidContract.validation}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </nb-card-body>
+  </nb-card>

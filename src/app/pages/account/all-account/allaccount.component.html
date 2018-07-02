@@ -1,0 +1,31 @@
+<nb-card>
+  <nb-card-header>
+    list of account
+  </nb-card-header>
+
+  <nb-card-body>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id account</th>
+          <th>Solde</th>
+          <th>Currency</th>
+          <th>Creation date</th>
+          <th>Client firt name</th>
+          <th>Client last name</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let compte of allComptes | async">
+          <td>{{compte.Idcompte}}</td>
+          <td>{{compte.solde}}</td>
+          <td>{{compte.currency}}</td>
+          <td>{{compte.date_creation}}</td>
+          <td>{{compte.client.first_name}}</td>
+          <td>{{compte.client.last_name}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </nb-card-body>
+</nb-card>
