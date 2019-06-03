@@ -1,0 +1,32 @@
+<nb-card>
+  <nb-card-header>
+    list of check in bank
+  </nb-card-header>
+
+  <nb-card-body>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID check </th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Bank reciver</th>
+          <th>Bank owner</th>
+          <th>Account owner</th>
+          <th>State</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let checkinbank of allcheckinbank | async">
+          <td>{{checkinbank.Idcheck}}</td>
+          <td>{{checkinbank.amount}}</td>
+          <td>{{checkinbank.date}}</td>
+          <td>{{checkinbank.reciver}}</td>
+          <td>{{checkinbank.owner}}</td>
+          <td>{{checkinbank.compte_owner}}</td>
+          <td>{{checkinbank.statue}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </nb-card-body>
+</nb-card>

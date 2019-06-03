@@ -1,0 +1,28 @@
+<nb-card>
+        <nb-card-header>
+          Error contract
+          </nb-card-header>
+      
+        <nb-card-body>
+            <table class="table">
+                <thead>
+                      <tr>
+                        <th>Recipient account </th>
+                        <th>Owner account</th>
+                        <th>Bank owner</th>
+                        <th>Check</th>
+                        <th>State</th>
+                          </tr>
+                </thead>
+                <tbody>
+                      <tr *ngFor="let ContractError of allContractError | async">
+                        <td>{{ContractError.compte_newowner}}</td>
+                        <td>{{ContractError.compte_owner}}</td>
+                        <td>{{ContractError.owner}}</td>
+                        <td>{{ContractError.check}}</td>
+                        <td>{{ContractError.validation}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </nb-card-body>
+      </nb-card>

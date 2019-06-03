@@ -1,0 +1,32 @@
+<nb-card>
+  <nb-card-header>
+    list of check in transit
+  </nb-card-header>
+
+  <nb-card-body>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID check </th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Bank reciver</th>
+          <th>Bank owner</th>
+          <th>Account owner</th>
+          <th>State</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let checkintransit of allcheckintransit | async">
+          <td>{{checkintransit.Idcheck}}</td>
+          <td>{{checkintransit.amount}}</td>
+          <td>{{checkintransit.date}}</td>
+          <td>{{checkintransit.reciver}}</td>
+          <td>{{checkintransit.owner}}</td>
+          <td>{{checkintransit.compte_owner}}</td>
+          <td>{{checkintransit.statue}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </nb-card-body>
+</nb-card>

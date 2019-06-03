@@ -1,0 +1,85 @@
+<nb-card>
+    <nb-card-header>
+      Add contract
+      </nb-card-header>
+    <nb-card-body>
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm" *ngIf="AddContract">
+            <div class="row">
+        <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="inputLastName">Id contrat</label>
+                        <input type="text" class="form-control" #titleInput="ngModel"  required name="Idcontrat" id="idIdcontract" [(ngModel)]="AddContract.Idcontract"/>
+                      </div>
+                </div>
+        
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="inputEmail">Recipient account</label>
+                        <input type="text" class="form-control" #titleInput="ngModel"  required name="compte_newowner" id="idcompte_newowner" [(ngModel)]="AddContract.compte_newowner"/>
+                    </div>
+                </div>         
+              </div>
+
+              <div class="row">
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                          <label for="inputEmail">Owner account	</label>
+                              <input class="form-control" #titleInput="ngModel" required name="compte_owner" id="idcompte_owner" [(ngModel)]="AddContract.compte_owner"/>
+                      </div>
+                  </div>
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                          <label for="inputEmail">check</label>
+      
+                              <select class="form-control" #titleInput="ngModel" required name="check" id="field_title" [(ngModel)]="AddContract.check">
+                                    <option disabled >Choose Id Check</option>
+           <option selected="true" *ngFor="let checkInBank of allcheckinbank | async " value="{{checkInBank.Idcheck}}"> {{checkInBank.Idcheck}}</option>
+                                 </select>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-5"></div>
+                  <div class="col-sm-1">
+
+            <button type="submit" [disabled]="!editForm.form.valid" class="btn btn-primary">
+                <span class="fa fa-save"></span>&nbsp;<span>Valider</span>
+                </button>
+              </div>
+        </div>
+        </form>
+</nb-card-body>
+</nb-card>
+
+<nb-card>
+    <nb-card-header>
+      list of contract
+      </nb-card-header>
+    <nb-card-body>
+<table class="table">
+            <thead>
+                  <tr>
+                    <th>ID contract</th>
+                    <th>Recipient account </th>
+                    <th>Owner account</th>
+                    <th>Bank owner</th>
+                    <th>Check</th>
+                    <th>State</th>
+                      </tr>
+            </thead>
+            <tbody>
+                  <tr *ngFor="let contract of allContracts | async">
+
+                  <td>{{contract.Idcontract}}</td>
+                    <td>{{contract.compte_newowner}}</td>
+                    <td>{{contract.compte_owner}}</td>
+                    <td>{{contract.owner}}</td>
+                    <td>{{contract.check}}</td>
+                    <td>{{contract.validation}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </nb-card-body>
+  </nb-card>
+
+
